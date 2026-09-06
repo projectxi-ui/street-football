@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Street Football</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="game-container">
+
+    <div class="top-bar">
+      <div class="team blue">BLUE <span id="blueScore">0</span></div>
+
+      <div class="timer" id="timer">02:00</div>
+
+      <div class="team red"><span id="redScore">0</span> RED</div>
+    </div>
+
+    <canvas id="gameCanvas" width="1000" height="600"></canvas>
+
+    <div class="controls">
+      🎮 Move: <b>WASD / Arrow Keys</b> |
+      ⚡ Sprint: <b>SHIFT</b> |
+      ⚽ Shoot: <b>SPACE</b>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
