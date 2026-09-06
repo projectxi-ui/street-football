@@ -72,61 +72,82 @@
 
 
   <!-- CAREER SETUP -->
-  <section id="careerScreen" class="screen">
+ <!-- CAREER SETUP -->
+<section id="careerScreen" class="screen">
 
-    <header class="top-bar">
-      <button class="back-btn" id="backToMenu">← BACK</button>
-      <div class="logo">WFM</div>
-      <div></div>
-    </header>
+  <header class="top-bar">
+    <button class="back-btn" id="backToMenu">← BACK</button>
+    <div class="logo">WFM</div>
+    <div></div>
+  </header>
 
-    <div class="career-container">
+  <div class="career-container">
 
-      <h1>START NEW CAREER</h1>
-      <p class="description">
-        Build your club from the ground up and become a football legend.
-      </p>
+    <h1>CREATE YOUR CLUB</h1>
 
-      <div class="setup-box">
+    <p class="description">
+      Build your own football club and take it to the top.
+    </p>
 
-        <label for="managerInput">MANAGER NAME</label>
-        <input
-          type="text"
-          id="managerInput"
-          placeholder="Enter your name"
-          maxlength="20"
-        >
+    <div class="setup-box">
 
-        <label for="clubSelect">CHOOSE YOUR CLUB</label>
+      <label for="managerInput">MANAGER NAME</label>
 
-        <select id="clubSelect">
-          <option value="Nova FC">🔵 Nova FC</option>
-          <option value="Metro United">🔴 Metro United</option>
-          <option value="Royal City">🟡 Royal City</option>
-          <option value="Phoenix FC">🟠 Phoenix FC</option>
-          <option value="Galaxy United">🟣 Galaxy United</option>
-          <option value="Ocean FC">🔵 Ocean FC</option>
-          <option value="Thunder FC">⚡ Thunder FC</option>
-          <option value="Capital City">🟢 Capital City</option>
-        </select>
+      <input
+        type="text"
+        id="managerInput"
+        placeholder="Enter your manager name"
+        maxlength="20"
+      >
 
-        <label for="difficulty">DIFFICULTY</label>
 
-        <select id="difficulty">
-          <option value="easy">EASY</option>
-          <option value="normal" selected>NORMAL</option>
-          <option value="hard">HARD</option>
-        </select>
+      <label for="teamInput">TEAM NAME</label>
 
-        <button id="createCareerBtn" class="primary-btn">
-          CREATE CAREER
-        </button>
+      <input
+        type="text"
+        id="teamInput"
+        placeholder="Enter your team name"
+        maxlength="25"
+      >
 
-      </div>
+
+      <label for="teamColor">TEAM COLOR</label>
+
+      <input
+        type="color"
+        id="teamColor"
+        value="#72ff5b"
+      >
+
+
+      <label for="difficulty">CAREER DIFFICULTY</label>
+
+      <select id="difficulty">
+
+        <option value="easy">
+          EASY
+        </option>
+
+        <option value="normal" selected>
+          NORMAL
+        </option>
+
+        <option value="hard">
+          HARD
+        </option>
+
+      </select>
+
+
+      <button id="createCareerBtn" class="primary-btn">
+        CREATE MY CLUB ⚽
+      </button>
 
     </div>
-  </section>
 
+  </div>
+
+</section>
 
   <!-- CLUB DASHBOARD -->
   <section id="dashboardScreen" class="screen">
