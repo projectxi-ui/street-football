@@ -2,31 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-  <title>STREET FOOTBALL</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Football Manager</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div id="app">
+  <!-- OPENING SCREEN -->
+  <section id="openingScreen" class="screen active">
+    <div class="opening-content">
+      <p class="small-title">PRESENTED BY</p>
+      <h1>WORLD<br>FOOTBALL<br>MANAGER</h1>
+      <p class="subtitle">BUILD. MANAGE. DOMINATE.</p>
 
-  <!-- START SCREEN -->
-  <section id="startScreen" class="screen active">
-    <div class="start-bg"></div>
-
-    <div class="start-content">
-      <div class="small-title">PROJECT XI PRESENTS</div>
-      <h1>STREET<br><span>FOOTBALL</span></h1>
-      <p class="tagline">OWN THE STREET.</p>
-
-      <button id="startBtn" class="big-btn">
-        PLAY
-      </button>
-
-      <p class="hint">CLICK PLAY TO START</p>
+      <button id="startBtn">START GAME</button>
     </div>
   </section>
 
@@ -34,369 +24,264 @@
   <!-- MAIN MENU -->
   <section id="mainMenu" class="screen">
 
-    <div class="menu-bg"></div>
-
-    <header class="menu-header">
-      <div class="logo">
-        STREET<br><span>FOOTBALL</span>
-      </div>
-
-      <div class="menu-profile">
-        <div class="profile-icon">⚽</div>
-        <div>
-          <small>PLAYER</small>
-          <strong>ROOKIE</strong>
-        </div>
+    <header class="top-bar">
+      <div class="logo">WFM</div>
+      <div class="manager-info">
+        <span id="managerName">MANAGER</span>
+        <span>⭐ 0 XP</span>
       </div>
     </header>
 
-    <div class="main-menu-content">
+    <div class="menu-content">
 
-      <div class="menu-title">
-        <small>MAIN MENU</small>
-        <h2>WELCOME<br>TO THE STREET</h2>
+      <div class="welcome">
+        <p>WELCOME, MANAGER</p>
+        <h2>WORLD FOOTBALL MANAGER</h2>
       </div>
 
-      <div class="menu-buttons">
+      <div class="menu-grid">
 
-        <button class="menu-btn primary" id="playBtn">
+        <button class="menu-card" id="careerBtn">
+          <span>🏆</span>
+          <strong>CAREER</strong>
+          <small>Start your journey</small>
+        </button>
+
+        <button class="menu-card">
           <span>⚽</span>
-          <div>
-            <strong>PLAY</strong>
-            <small>3V3 QUICK MATCH</small>
-          </div>
-          <b>›</b>
+          <strong>QUICK MATCH</strong>
+          <small>Play a match</small>
         </button>
 
-        <button class="menu-btn" id="practiceBtn">
-          <span>🎯</span>
-          <div>
-            <strong>PRACTICE</strong>
-            <small>TRAIN YOUR SKILLS</small>
-          </div>
-          <b>›</b>
+        <button class="menu-card">
+          <span>🌍</span>
+          <strong>TOURNAMENTS</strong>
+          <small>Compete for trophies</small>
         </button>
 
-        <button class="menu-btn" id="settingsBtn">
+        <button class="menu-card">
           <span>⚙️</span>
-          <div>
-            <strong>SETTINGS</strong>
-            <small>GAME OPTIONS</small>
-          </div>
-          <b>›</b>
+          <strong>SETTINGS</strong>
+          <small>Game settings</small>
         </button>
 
       </div>
 
     </div>
-
-    <footer>STREET FOOTBALL V3 • MADE FOR THE STREET</footer>
-
   </section>
 
 
-  <!-- PLAY MODE -->
-  <section id="modeScreen" class="screen">
-
-    <div class="simple-header">
-      <button class="back-btn" data-back="mainMenu">‹</button>
-      <h2>SELECT MODE</h2>
-    </div>
-
-    <div class="mode-content">
-
-      <div class="mode-card selected">
-        <div class="mode-icon">⚽</div>
-
-        <div>
-          <h3>3V3 QUICK MATCH</h3>
-          <p>Fast football. No excuses.</p>
-
-          <div class="mode-tags">
-            <span>3 VS 3</span>
-            <span>2 MIN</span>
-            <span>STREET</span>
-          </div>
-        </div>
-
-        <button id="select3v3">SELECT ›</button>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- TEAM SELECT -->
-  <section id="teamScreen" class="screen">
-
-    <div class="simple-header">
-      <button class="back-btn" data-back="modeScreen">‹</button>
-      <h2>CHOOSE YOUR TEAM</h2>
-    </div>
-
-    <div class="team-content">
-
-      <p class="select-label">SELECT YOUR SIDE</p>
-
-      <div class="teams">
-
-        <button class="team-card blue-team selected" data-team="blue">
-
-          <div class="jersey blue-jersey">
-            <div class="jersey-number">10</div>
-          </div>
-
-          <h3>BLUE CITY</h3>
-          <p>THE STREET KINGS</p>
-
-          <div class="team-stat">
-            <span>ATTACK</span>
-            <div><i style="width:78%"></i></div>
-          </div>
-
-          <div class="team-stat">
-            <span>SPEED</span>
-            <div><i style="width:84%"></i></div>
-          </div>
-
-        </button>
-
-
-        <button class="team-card red-team" data-team="red">
-
-          <div class="jersey red-jersey">
-            <div class="jersey-number">9</div>
-          </div>
-
-          <h3>RED STREETS</h3>
-          <p>NO FEAR. NO LIMITS.</p>
-
-          <div class="team-stat">
-            <span>ATTACK</span>
-            <div><i style="width:84%"></i></div>
-          </div>
-
-          <div class="team-stat">
-            <span>SPEED</span>
-            <div><i style="width:76%"></i></div>
-          </div>
-
-        </button>
-
-      </div>
-
-      <button id="continueTeam" class="continue-btn">
-        CONTINUE →
-      </button>
-
-    </div>
-
-  </section>
-
-
-  <!-- MATCH INTRO -->
-  <section id="introScreen" class="screen">
-
-    <div class="intro-bg"></div>
-
-    <div class="intro-content">
-
-      <div class="match-label">3V3 QUICK MATCH</div>
-
-      <div class="versus">
-
-        <div class="intro-team blue-text">
-          <div class="big-jersey blue-jersey">
-            <span>10</span>
-          </div>
-          <h2>BLUE CITY</h2>
-        </div>
-
-        <div class="vs">
-          <span>VS</span>
-        </div>
-
-        <div class="intro-team red-text">
-          <div class="big-jersey red-jersey">
-            <span>9</span>
-          </div>
-          <h2>RED STREETS</h2>
-        </div>
-
-      </div>
-
-      <button id="kickOffBtn" class="big-btn">
-        KICK OFF ⚽
-      </button>
-
-    </div>
-
-  </section>
-
-
-  <!-- GAME -->
-  <section id="gameScreen" class="screen game-screen">
-
-    <div class="game-ui">
-
-      <div class="scoreboard">
-
-        <div class="score-team blue-score">
-          <span>BLUE CITY</span>
-          <strong id="blueScore">0</strong>
-        </div>
-
-        <div class="game-time" id="timer">02:00</div>
-
-        <div class="score-team red-score">
-          <strong id="redScore">0</strong>
-          <span>RED STREETS</span>
-        </div>
-
-      </div>
-
-      <div class="game-message" id="gameMessage"></div>
-
-      <canvas id="gameCanvas"></canvas>
-
-
-      <!-- MOBILE CONTROLS -->
-      <div class="mobile-controls">
-
-        <div class="joystick">
-
-          <button data-key="up">▲</button>
-
-          <div class="middle-buttons">
-            <button data-key="left">◀</button>
-            <div class="joystick-center"></div>
-            <button data-key="right">▶</button>
-          </div>
-
-          <button data-key="down">▼</button>
-
-        </div>
-
-        <div class="action-buttons">
-          <button class="sprint" data-key="shift">
-            ⚡
-            <span>SPRINT</span>
-          </button>
-
-          <button class="shoot" data-key="space">
-            ⚽
-            <span>SHOOT</span>
-          </button>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- GAME OVER -->
-  <section id="gameOverScreen" class="screen">
-
-    <div class="gameover-bg"></div>
-
-    <div class="gameover-content">
-
-      <small>MATCH FINISHED</small>
-
-      <h1 id="winnerText">BLUE CITY WINS!</h1>
-
-      <div class="final-score">
-        <span id="finalBlue">0</span>
-        <b>—</b>
-        <span id="finalRed">0</span>
-      </div>
-
-      <div class="gameover-buttons">
-        <button id="rematchBtn" class="big-btn">
-          REMATCH
-        </button>
-
-        <button id="menuBtn" class="secondary-btn">
-          MAIN MENU
-        </button>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- SETTINGS -->
-  <section id="settingsScreen" class="screen">
-
-    <div class="simple-header">
-      <button class="back-btn" data-back="mainMenu">‹</button>
-      <h2>SETTINGS</h2>
-    </div>
-
-    <div class="settings-content">
-
-      <div class="setting-row">
-        <div>
-          <strong>Game Speed</strong>
-          <small>Choose match speed</small>
-        </div>
-
-        <select id="speedSetting">
-          <option value="normal">Normal</option>
-          <option value="fast">Fast</option>
-        </select>
-      </div>
-
-      <div class="setting-row">
-        <div>
-          <strong>Vibration</strong>
-          <small>Mobile button feedback</small>
-        </div>
-
-        <button id="vibrationBtn" class="toggle on">
-          ON
-        </button>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- PRACTICE -->
-  <section id="practiceScreen" class="screen">
-
-    <div class="simple-header">
-      <button class="back-btn" data-back="mainMenu">‹</button>
-      <h2>PRACTICE</h2>
-    </div>
-
-    <div class="practice-content">
-
-      <div class="practice-icon">⚽</div>
-
-      <h1>COMING SOON</h1>
-
-      <p>
-        Practice mode is being built.<br>
-        Master your skills in the next update!
+  <!-- CAREER SETUP -->
+  <section id="careerScreen" class="screen">
+
+    <header class="top-bar">
+      <button class="back-btn" id="backToMenu">← BACK</button>
+      <div class="logo">WFM</div>
+      <div></div>
+    </header>
+
+    <div class="career-container">
+
+      <h1>START NEW CAREER</h1>
+      <p class="description">
+        Build your club from the ground up and become a football legend.
       </p>
 
-      <button class="secondary-btn" data-back="mainMenu">
-        BACK TO MENU
-      </button>
+      <div class="setup-box">
+
+        <label for="managerInput">MANAGER NAME</label>
+        <input
+          type="text"
+          id="managerInput"
+          placeholder="Enter your name"
+          maxlength="20"
+        >
+
+        <label for="clubSelect">CHOOSE YOUR CLUB</label>
+
+        <select id="clubSelect">
+          <option value="Nova FC">🔵 Nova FC</option>
+          <option value="Metro United">🔴 Metro United</option>
+          <option value="Royal City">🟡 Royal City</option>
+          <option value="Phoenix FC">🟠 Phoenix FC</option>
+          <option value="Galaxy United">🟣 Galaxy United</option>
+          <option value="Ocean FC">🔵 Ocean FC</option>
+          <option value="Thunder FC">⚡ Thunder FC</option>
+          <option value="Capital City">🟢 Capital City</option>
+        </select>
+
+        <label for="difficulty">DIFFICULTY</label>
+
+        <select id="difficulty">
+          <option value="easy">EASY</option>
+          <option value="normal" selected>NORMAL</option>
+          <option value="hard">HARD</option>
+        </select>
+
+        <button id="createCareerBtn" class="primary-btn">
+          CREATE CAREER
+        </button>
+
+      </div>
 
     </div>
+  </section>
+
+
+  <!-- CLUB DASHBOARD -->
+  <section id="dashboardScreen" class="screen">
+
+    <header class="top-bar">
+
+      <div>
+        <div class="logo">WFM</div>
+      </div>
+
+      <div class="club-header">
+        <strong id="clubName">NOVA FC</strong>
+        <span>Season 1</span>
+      </div>
+
+      <button id="dashboardMenuBtn" class="small-btn">
+        MENU
+      </button>
+
+    </header>
+
+
+    <main class="dashboard">
+
+      <!-- CLUB SUMMARY -->
+
+      <section class="club-summary">
+
+        <div class="club-title">
+          <div class="club-badge">⚽</div>
+
+          <div>
+            <p>YOUR CLUB</p>
+            <h1 id="dashboardClubName">NOVA FC</h1>
+          </div>
+        </div>
+
+        <div class="club-stats">
+
+          <div>
+            <span>💰 BUDGET</span>
+            <strong id="budget">€50M</strong>
+          </div>
+
+          <div>
+            <span>🏆 POSITION</span>
+            <strong>1st</strong>
+          </div>
+
+          <div>
+            <span>⭐ REPUTATION</span>
+            <strong>75</strong>
+          </div>
+
+          <div>
+            <span>😊 MORALE</span>
+            <strong>85%</strong>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- NEXT MATCH -->
+
+      <section class="next-match">
+
+        <div class="section-title">
+          <span>NEXT MATCH</span>
+          <span id="matchDate">SATURDAY</span>
+        </div>
+
+        <div class="match-card">
+
+          <div class="team">
+            <div class="team-icon">🔵</div>
+            <strong id="homeTeam">NOVA FC</strong>
+            <small>HOME</small>
+          </div>
+
+          <div class="versus">
+            <span>VS</span>
+            <small>18:00</small>
+          </div>
+
+          <div class="team">
+            <div class="team-icon">🔴</div>
+            <strong>METRO UNITED</strong>
+            <small>AWAY</small>
+          </div>
+
+        </div>
+
+        <button id="playMatchBtn" class="primary-btn">
+          PLAY MATCH ⚽
+        </button>
+
+      </section>
+
+
+      <!-- MANAGEMENT OPTIONS -->
+
+      <section class="management">
+
+        <h2>MANAGEMENT</h2>
+
+        <div class="management-grid">
+
+          <button>
+            <span>👥</span>
+            <strong>SQUAD</strong>
+            <small>Manage players</small>
+          </button>
+
+          <button>
+            <span>📋</span>
+            <strong>TACTICS</strong>
+            <small>Set formation</small>
+          </button>
+
+          <button>
+            <span>🔄</span>
+            <strong>TRANSFERS</strong>
+            <small>Buy & sell players</small>
+          </button>
+
+          <button>
+            <span>🏋️</span>
+            <strong>TRAINING</strong>
+            <small>Develop players</small>
+          </button>
+
+          <button>
+            <span>🗓️</span>
+            <strong>CALENDAR</strong>
+            <small>View fixtures</small>
+          </button>
+
+          <button>
+            <span>📊</span>
+            <strong>LEAGUE TABLE</strong>
+            <small>Check standings</small>
+          </button>
+
+        </div>
+
+      </section>
+
+    </main>
 
   </section>
 
-</div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
