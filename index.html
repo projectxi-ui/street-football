@@ -2,36 +2,401 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>Street Football</title>
-
+  <title>STREET FOOTBALL</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div class="game-container">
+<div id="app">
 
-    <div class="top-bar">
-      <div class="team blue">BLUE <span id="blueScore">0</span></div>
+  <!-- START SCREEN -->
+  <section id="startScreen" class="screen active">
+    <div class="start-bg"></div>
 
-      <div class="timer" id="timer">02:00</div>
+    <div class="start-content">
+      <div class="small-title">PROJECT XI PRESENTS</div>
+      <h1>STREET<br><span>FOOTBALL</span></h1>
+      <p class="tagline">OWN THE STREET.</p>
 
-      <div class="team red"><span id="redScore">0</span> RED</div>
+      <button id="startBtn" class="big-btn">
+        PLAY
+      </button>
+
+      <p class="hint">CLICK PLAY TO START</p>
+    </div>
+  </section>
+
+
+  <!-- MAIN MENU -->
+  <section id="mainMenu" class="screen">
+
+    <div class="menu-bg"></div>
+
+    <header class="menu-header">
+      <div class="logo">
+        STREET<br><span>FOOTBALL</span>
+      </div>
+
+      <div class="menu-profile">
+        <div class="profile-icon">⚽</div>
+        <div>
+          <small>PLAYER</small>
+          <strong>ROOKIE</strong>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-menu-content">
+
+      <div class="menu-title">
+        <small>MAIN MENU</small>
+        <h2>WELCOME<br>TO THE STREET</h2>
+      </div>
+
+      <div class="menu-buttons">
+
+        <button class="menu-btn primary" id="playBtn">
+          <span>⚽</span>
+          <div>
+            <strong>PLAY</strong>
+            <small>3V3 QUICK MATCH</small>
+          </div>
+          <b>›</b>
+        </button>
+
+        <button class="menu-btn" id="practiceBtn">
+          <span>🎯</span>
+          <div>
+            <strong>PRACTICE</strong>
+            <small>TRAIN YOUR SKILLS</small>
+          </div>
+          <b>›</b>
+        </button>
+
+        <button class="menu-btn" id="settingsBtn">
+          <span>⚙️</span>
+          <div>
+            <strong>SETTINGS</strong>
+            <small>GAME OPTIONS</small>
+          </div>
+          <b>›</b>
+        </button>
+
+      </div>
+
     </div>
 
-    <canvas id="gameCanvas" width="1000" height="600"></canvas>
+    <footer>STREET FOOTBALL V3 • MADE FOR THE STREET</footer>
 
-    <div class="controls">
-      🎮 Move: <b>WASD / Arrow Keys</b> |
-      ⚡ Sprint: <b>SHIFT</b> |
-      ⚽ Shoot: <b>SPACE</b>
+  </section>
+
+
+  <!-- PLAY MODE -->
+  <section id="modeScreen" class="screen">
+
+    <div class="simple-header">
+      <button class="back-btn" data-back="mainMenu">‹</button>
+      <h2>SELECT MODE</h2>
     </div>
 
-  </div>
+    <div class="mode-content">
 
-  <script src="script.js"></script>
+      <div class="mode-card selected">
+        <div class="mode-icon">⚽</div>
+
+        <div>
+          <h3>3V3 QUICK MATCH</h3>
+          <p>Fast football. No excuses.</p>
+
+          <div class="mode-tags">
+            <span>3 VS 3</span>
+            <span>2 MIN</span>
+            <span>STREET</span>
+          </div>
+        </div>
+
+        <button id="select3v3">SELECT ›</button>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TEAM SELECT -->
+  <section id="teamScreen" class="screen">
+
+    <div class="simple-header">
+      <button class="back-btn" data-back="modeScreen">‹</button>
+      <h2>CHOOSE YOUR TEAM</h2>
+    </div>
+
+    <div class="team-content">
+
+      <p class="select-label">SELECT YOUR SIDE</p>
+
+      <div class="teams">
+
+        <button class="team-card blue-team selected" data-team="blue">
+
+          <div class="jersey blue-jersey">
+            <div class="jersey-number">10</div>
+          </div>
+
+          <h3>BLUE CITY</h3>
+          <p>THE STREET KINGS</p>
+
+          <div class="team-stat">
+            <span>ATTACK</span>
+            <div><i style="width:78%"></i></div>
+          </div>
+
+          <div class="team-stat">
+            <span>SPEED</span>
+            <div><i style="width:84%"></i></div>
+          </div>
+
+        </button>
+
+
+        <button class="team-card red-team" data-team="red">
+
+          <div class="jersey red-jersey">
+            <div class="jersey-number">9</div>
+          </div>
+
+          <h3>RED STREETS</h3>
+          <p>NO FEAR. NO LIMITS.</p>
+
+          <div class="team-stat">
+            <span>ATTACK</span>
+            <div><i style="width:84%"></i></div>
+          </div>
+
+          <div class="team-stat">
+            <span>SPEED</span>
+            <div><i style="width:76%"></i></div>
+          </div>
+
+        </button>
+
+      </div>
+
+      <button id="continueTeam" class="continue-btn">
+        CONTINUE →
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- MATCH INTRO -->
+  <section id="introScreen" class="screen">
+
+    <div class="intro-bg"></div>
+
+    <div class="intro-content">
+
+      <div class="match-label">3V3 QUICK MATCH</div>
+
+      <div class="versus">
+
+        <div class="intro-team blue-text">
+          <div class="big-jersey blue-jersey">
+            <span>10</span>
+          </div>
+          <h2>BLUE CITY</h2>
+        </div>
+
+        <div class="vs">
+          <span>VS</span>
+        </div>
+
+        <div class="intro-team red-text">
+          <div class="big-jersey red-jersey">
+            <span>9</span>
+          </div>
+          <h2>RED STREETS</h2>
+        </div>
+
+      </div>
+
+      <button id="kickOffBtn" class="big-btn">
+        KICK OFF ⚽
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- GAME -->
+  <section id="gameScreen" class="screen game-screen">
+
+    <div class="game-ui">
+
+      <div class="scoreboard">
+
+        <div class="score-team blue-score">
+          <span>BLUE CITY</span>
+          <strong id="blueScore">0</strong>
+        </div>
+
+        <div class="game-time" id="timer">02:00</div>
+
+        <div class="score-team red-score">
+          <strong id="redScore">0</strong>
+          <span>RED STREETS</span>
+        </div>
+
+      </div>
+
+      <div class="game-message" id="gameMessage"></div>
+
+      <canvas id="gameCanvas"></canvas>
+
+
+      <!-- MOBILE CONTROLS -->
+      <div class="mobile-controls">
+
+        <div class="joystick">
+
+          <button data-key="up">▲</button>
+
+          <div class="middle-buttons">
+            <button data-key="left">◀</button>
+            <div class="joystick-center"></div>
+            <button data-key="right">▶</button>
+          </div>
+
+          <button data-key="down">▼</button>
+
+        </div>
+
+        <div class="action-buttons">
+          <button class="sprint" data-key="shift">
+            ⚡
+            <span>SPRINT</span>
+          </button>
+
+          <button class="shoot" data-key="space">
+            ⚽
+            <span>SHOOT</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GAME OVER -->
+  <section id="gameOverScreen" class="screen">
+
+    <div class="gameover-bg"></div>
+
+    <div class="gameover-content">
+
+      <small>MATCH FINISHED</small>
+
+      <h1 id="winnerText">BLUE CITY WINS!</h1>
+
+      <div class="final-score">
+        <span id="finalBlue">0</span>
+        <b>—</b>
+        <span id="finalRed">0</span>
+      </div>
+
+      <div class="gameover-buttons">
+        <button id="rematchBtn" class="big-btn">
+          REMATCH
+        </button>
+
+        <button id="menuBtn" class="secondary-btn">
+          MAIN MENU
+        </button>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SETTINGS -->
+  <section id="settingsScreen" class="screen">
+
+    <div class="simple-header">
+      <button class="back-btn" data-back="mainMenu">‹</button>
+      <h2>SETTINGS</h2>
+    </div>
+
+    <div class="settings-content">
+
+      <div class="setting-row">
+        <div>
+          <strong>Game Speed</strong>
+          <small>Choose match speed</small>
+        </div>
+
+        <select id="speedSetting">
+          <option value="normal">Normal</option>
+          <option value="fast">Fast</option>
+        </select>
+      </div>
+
+      <div class="setting-row">
+        <div>
+          <strong>Vibration</strong>
+          <small>Mobile button feedback</small>
+        </div>
+
+        <button id="vibrationBtn" class="toggle on">
+          ON
+        </button>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRACTICE -->
+  <section id="practiceScreen" class="screen">
+
+    <div class="simple-header">
+      <button class="back-btn" data-back="mainMenu">‹</button>
+      <h2>PRACTICE</h2>
+    </div>
+
+    <div class="practice-content">
+
+      <div class="practice-icon">⚽</div>
+
+      <h1>COMING SOON</h1>
+
+      <p>
+        Practice mode is being built.<br>
+        Master your skills in the next update!
+      </p>
+
+      <button class="secondary-btn" data-back="mainMenu">
+        BACK TO MENU
+      </button>
+
+    </div>
+
+  </section>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
